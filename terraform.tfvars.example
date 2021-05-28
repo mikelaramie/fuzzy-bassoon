@@ -1,0 +1,4 @@
+org_id          = 1234567890
+billing_account = "012ABC3-456DEF7-89GHI"
+region          = "us-east1"
+zone            = "us-east1-b"
