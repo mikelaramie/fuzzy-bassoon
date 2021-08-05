@@ -31,3 +31,8 @@ override.tf.json
 
 # Ignore lock files
 .terraform.lock*
+
+# Demo files
+**/bank-of-anthos/*
+**/microservices-demo/*
+**/lacework/*
