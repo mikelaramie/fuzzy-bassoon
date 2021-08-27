@@ -15,8 +15,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: web-dvwa
-        image: docker.io/vulnerables/web-dvwa:latest
-        env:
+        image: us-east1-docker.pkg.dev/gke-project-01-05c8c7d8/vulnerable-apps/web-dvwa:latest
         resources:
           requests:
             cpu: 100m

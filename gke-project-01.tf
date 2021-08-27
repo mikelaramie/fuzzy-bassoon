@@ -70,7 +70,7 @@ resource "google_container_node_pool" "gke-project-01-cluster-01-pool-01" {
     the Bank of Anthos demo environment.  For a full list of available machine types
     visit https://cloud.google.com/compute/docs/machine-types    
     */
-    image_type = "cos_containerd"
+    image_type = "cos"
     /* Available Linux options are "cos", "cos_containerd", "ubuntu", "ubuntu_containerd" 
     For more info (including Windows options) visit
     https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
@@ -84,7 +84,7 @@ resource "google_container_node_pool" "gke-project-01-cluster-01-pool-01" {
 
 // Deploy Lacework to Cluster
 // TODO:  The config_context relies on creating the kubectl entry; need to figure out a way to automate creation
-provider "kubernetes" {
+/*provider "kubernetes" {
   alias          = "k8s-gke-project-01-cluster-01"
   config_path    = "~/.kube/config"
   config_context = "gke_${module.gke-project-01.project_id}_${var.zone}_${google_container_cluster.gke-project-01-cluster-01.name}"
@@ -141,16 +141,16 @@ module "lacework_gcr_svc_account" {
 
   project_id = module.gke-project-01.project_id
 }
-
+*/
 // Outputs
 output "gke-project-01-cluster-01-kubectl-command" {
   value = "gcloud container clusters get-credentials ${google_container_cluster.gke-project-01-cluster-01.name} --zone ${google_container_cluster.gke-project-01-cluster-01.location} --project ${module.gke-project-01.project_id}"
 }
 
-output "gke-project-01-test-repository-uri" {
+/*output "gke-project-01-test-repository-uri" {
   value = google_artifact_registry_repository.gke-project-01-test-repository.id
 }
-
+*/
 /*
 output "SA-credentials" {
   value     = jsondecode(base64decode(module.lacework_gcr_svc_account.private_key))
