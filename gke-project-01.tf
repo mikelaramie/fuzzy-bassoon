@@ -28,7 +28,7 @@ resource "google_compute_network" "gke-project-01-default-network" {
   routing_mode            = "GLOBAL"
 }
 
-resource "google_compute_firewall" "default" {
+/*resource "google_compute_firewall" "default" {
     name       = "test-firewall"
     network    = google_compute_network.gke-project-01-default-network.name
 
@@ -39,7 +39,7 @@ resource "google_compute_firewall" "default" {
     }
     source_ranges = ["0.0.0.0/0"]
 }
-
+*/
 // cluster-01
 // TODO:  Refactor into a module
 resource "google_service_account" "gke-project-01-gke-cluster-01" {
