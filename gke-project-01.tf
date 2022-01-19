@@ -28,6 +28,18 @@ resource "google_compute_network" "gke-project-01-default-network" {
   routing_mode            = "GLOBAL"
 }
 
+/*resource "google_compute_firewall" "default" {
+    name       = "test-firewall"
+    network    = google_compute_network.gke-project-01-default-network.name
+
+    direction  = "INGRESS"
+    allow {
+      protocol = "tcp"
+      ports = ["22"]
+    }
+    source_ranges = ["0.0.0.0/0"]
+*/
+
 // cluster-01
 // TODO:  Refactor into a module
 resource "google_service_account" "gke-project-01-gke-cluster-01" {
@@ -48,6 +60,12 @@ resource "google_container_cluster" "gke-project-01-cluster-01" {
     cluster_ipv4_cidr_block  = "" //defaults to /14
     services_ipv4_cidr_block = "" //defaults to /14
   }
+  master_authorized_networks_config = [{
+    cidr_blocks = [{
+      cidr_block   = "0.0.0.0/0"
+      display_name = "public"
+    }]
+  }]
 }
 
 resource "google_container_node_pool" "gke-project-01-cluster-01-pool-01" {
