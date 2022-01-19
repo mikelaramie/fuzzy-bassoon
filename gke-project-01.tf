@@ -60,12 +60,12 @@ resource "google_container_cluster" "gke-project-01-cluster-01" {
     cluster_ipv4_cidr_block  = "" //defaults to /14
     services_ipv4_cidr_block = "" //defaults to /14
   }
-  master_authorized_networks_config = [{
+  master_authorized_networks_config {
     cidr_blocks = [{
-      cidr_block   = "0.0.0.0/0"
+      cidr_block = "0.0.0.0/0"
       display_name = "public"
     }]
-  }]
+  }
 }
 
 resource "google_container_node_pool" "gke-project-01-cluster-01-pool-01" {
