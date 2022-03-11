@@ -37,7 +37,7 @@ resource "google_compute_firewall" "default" {
       protocol = "tcp"
       ports = ["22"]
     }
-    source_ranges = ["0.0.0.0/0"]
+    source_ranges = ["10.0.0.0/8"]
 }
 
 // cluster-01
