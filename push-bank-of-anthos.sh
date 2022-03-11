@@ -19,3 +19,4 @@ done
 #lw vuln ctr scan us-east1-docker.pkg.dev mikelaramie-artifacts/bank-of-anthos/${container} v0.5.0
 #done
 
+# TODO:  Add docker rmi logic

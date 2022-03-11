@@ -12,3 +12,5 @@ docker tag gcr.io/google-samples/microservices-demo/${container}:${version} ${re
 docker push ${region}-docker.pkg.dev/${gcp_project}/online-boutique/${container}:${version}
 
 done
+
+# TODO:  ADd docker rmi logic
