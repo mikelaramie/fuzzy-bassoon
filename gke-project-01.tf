@@ -62,10 +62,11 @@ resource "google_container_cluster" "gke-project-01-cluster-01" {
   }
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block = "0.0.0.0/0"
+      cidr_block   = "0.0.0.0/0"
       display_name = "public"
     }
   }
+  enable_shielded_nodes = true
 }
 
 resource "google_container_node_pool" "gke-project-01-cluster-01-pool-01" {
