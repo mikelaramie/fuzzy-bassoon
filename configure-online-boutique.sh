@@ -1,32 +1,5 @@
 #!/bin/zsh
 
-## AWS ECR
-#aws_account="100588478000"
-#region="us-west-2"
-#docker_repo="${aws_account}.dkr.ecr.${region}.amazonaws.com/bank-of-anthos/"
-
-## GCP GAR
-#region="us-east1"
-#project_id="gke-project-01-05c8c7d8"
-#docker-repo="${region}-docker.pkg.dev/${project_id}"
-
-## GCP GCR
-#region="us"
-#project_id="gke-polygraph-demo"
-#docker-repo="${region}.gcr.io/${project_id}"
-
-#! /bin/zsh
-#AWS
-#aws_account="100588478000"
-#aws_region="us-west-2"
-
-#GCP
-#gcp_project_id="gke-polygraph-demo"
-#gcp_gar_region="us-central-1." # must end in .
-#gcp_gcr_region="us." # must end in .
-
-#registry="q5y5l4i3"
-
 source repositories.sh
 
 source_repo=${ob_source_repo}

@@ -1,19 +1,5 @@
 #!/bin/zsh
 
-## AWS ECR
-#aws_account="100588478000"
-#region="us-west-2"
-#docker_repo="${aws_account}.dkr.ecr.${region}.amazonaws.com/bank-of-anthos/"
-
-## GCP GAR
-#region="us-east1"
-#project_id="gke-project-01-05c8c7d8"
-#docker-repo="${region}-docker.pkg.dev/${project_id}"
-
-## GCP GCR
-#region="us"
-#project_id="gke-polygraph-demo"
-
 source repositories.sh
 
 source_repo=${boa_source_repo}
